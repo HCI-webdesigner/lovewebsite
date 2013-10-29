@@ -25,9 +25,9 @@ h2{
 .location {
 	padding: 30px 0 15px 20px;
     font-size: 16px;
-   font-weight: bold;
-   color: rgba(0,0,0,0.4);
-   *color: gray;
+   	font-weight: bold;
+   	color: rgba(0,0,0,0.4);
+   	*color: gray;
 }
 .location em{
 	color: #74b157;
@@ -47,13 +47,13 @@ h2{
 	-webkit-transition: all .2s ease-in-out;
 	transition: all .2s ease-in-out;
 }
-.upload-box,.loverpeople{
-	width: 980px;
+.upload-box{
+	width: 958px;
 	position: relative;
 	margin: auto;
 }
-.upload_main,.loverpeople_main{
-	height: 340px;
+.upload_main{
+	overflow: hidden;
 	background-color: whiteSmoke;
 	border: 1px solid #DDD;
 	-webkit-border-radius: 4px;
@@ -65,20 +65,35 @@ h2{
 	line-height: 20px;
 	margin-top: 30px;
 }
-.upload_img,.loverpeople_img{
+.upload_img{
 	width:180px;
 	margin: 20px;
 	margin-top: 30px;
 
 }
-.upload_content,.loverpeople_content{
+.upload_content{
 	position: absolute;
-	left: 260px;
+	left: 230px;
 	top: 115px;
 	width: 680px; 
 	padding-left:20px;
 	color: rgb(60,60,60);
 }
+
+.upload_content h2{
+	text-align: center;
+}
+
+.upload_content p{
+	text-indent: 2em;
+}
+
+.upload_date{
+	float: right;
+	margin: 0 30px 10px 0;
+	font-size: 18px;
+}
+
 .postcomment{
 	width: 958px;
 	margin: 50px 2px 25px 2px;
@@ -95,6 +110,33 @@ h2{
 	box-shadow:0px 5px 3px gray;
 	border-bottom: 2px solid #DCDCDC;
 }
+
+/*icon*/
+.up-hits{
+	font-size: 14px;
+	float: right;
+	margin: 4px 260px 0 0; 
+	vertical-align: bottom;
+}
+.icon_praise_b{
+	width: 13px;
+	height: 14px;
+	display: inline-block;
+	background-image: url(/public/images/icon.png);
+	background-position: -100px 0;
+	background-repeat: no-repeat;
+	vertical-align: text-bottom;
+}
+.icon_praise_a{
+	width: 13px;
+	height: 14px;
+	display: inline-block;
+	background-image: url(/public/images/icon.png);
+	background-position: -75px 0;
+	background-repeat: no-repeat;
+	vertical-align: text-bottom;
+}
+
 .bd-position{
 	position: relative;
 	left: 730px;

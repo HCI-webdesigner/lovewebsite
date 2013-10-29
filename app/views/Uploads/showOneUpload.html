@@ -18,34 +18,35 @@
 				&{oneUpload.content}
 			</div>
 			<div class="upload_date">
-				${oneUpload.postedAt.asdate('y-M-dd HH:mm:ss', 'chs')}
+				${oneUpload.postedAt.asdate('y-M-dd', 'chs')}
 			</div>
 		</div>
-		<div class="up-hits">
-			围观数:${oneUpload.hits}
+		<div class="share">
+			<span class="up-hits">
+			围观数 : ${oneUpload.hits}&nbsp;&nbsp;
 			#{if session.get("userId") != null}
 				#{if flag != 1}
-				<a href="@{Uploads.up(session.get('userId'), oneUpload.id)}">顶</a>
+				<a href="@{Uploads.up(session.get('userId'), oneUpload.id)}" title="取消顶"><em class="icon_praise_b"></em></a>
 				#{/if}
 				#{else}
 				你已顶过
 				#{/else}
 			#{/if}
 			#{else}
-			<a href="@{Users.login()}">登录</a>
+			<a href="@{Users.login()}" title="顶"><em class="icon_praise_a"></em></a>
 			#{/else}
 			(${oneUpload.upNum})
-		</div>
-
-        <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare bd-position">
-        <span class="bds_more">分享到：</span>
-        <a class="bds_qzone"></a>
-        <a class="bds_tsina"></a>
-        <a class="bds_tqq"></a>
-        <a class="bds_renren"></a>
-        <a class="bds_t163"></a>
-        <a class="shareCount"></a>
-        </div>
+			</span>
+	        <span id="bdshare" class="bdshare_t bds_tools get-codes-bdshare bd-position">
+		        <span class="bds_more">分享到：</span>
+		        <a class="bds_qzone"></a>
+		        <a class="bds_tsina"></a>
+		        <a class="bds_tqq"></a>
+		        <a class="bds_renren"></a>
+		        <a class="bds_t163"></a>
+		        <a class="shareCount"></a>
+	        </span>
+	    </div>
         <div class="postcomment">
 			<form action="@{Uploads.postComment(oneUpload.id)}" method="post" >
 			<h4>发表你的评论</h4>
