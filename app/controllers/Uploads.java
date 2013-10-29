@@ -36,10 +36,6 @@ public class Uploads extends Controller{
 
         }
     }
-
-    public static void downloadFile(long id) {
-
-    }
     
     public static void uploadHelp(File file, String title, String content) {
 	    if(session.get("userId") != null) {
@@ -215,6 +211,21 @@ public class Uploads extends Controller{
         Upload upload = Upload.findById(uploadId);
         upload.upNum = upload.upNum + 1;
         upload.upUserId = upload.upUserId + "," + userId;
+        upload.save();
+        showOneUpload(uploadId);
+    }
+
+    public static void cancleUp(String userId, Long uploadId) {
+        Upload upload = Upload.findById(uploadId);
+        upload.upNum = upload.upNum - 1;
+        String[] uploadUserIds = upload.upUserId.split(",");
+        String newUploadUserIds = "";
+        for(int i = 0; i < uploadUserIds.length; i++) {
+            if(!uploadUserIds[i].equals(userId)) {
+                newUploadUserIds = uploadUserIds[i] + ",";
+            }
+        }
+        upload.upUserId = newUploadUserIds;
         upload.save();
         showOneUpload(uploadId);
     }

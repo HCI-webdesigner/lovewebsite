@@ -26,10 +26,10 @@
 			围观数 : ${oneUpload.hits}&nbsp;&nbsp;
 			#{if session.get("userId") != null}
 				#{if flag != 1}
-				<a href="@{Uploads.up(session.get('userId'), oneUpload.id)}" title="取消顶"><em class="icon_praise_b"></em></a>
+				<a href="@{Uploads.up(session.get('userId'), oneUpload.id)}" title="顶"><em class="icon_praise_a"></em></a>
 				#{/if}
 				#{else}
-				你已顶过
+				<a href="@{Uploads.cancleUp(session.get('userId'), oneUpload.id)}" title="取消顶"><em class="icon_praise_b"></em></a>
 				#{/else}
 			#{/if}
 			#{else}
