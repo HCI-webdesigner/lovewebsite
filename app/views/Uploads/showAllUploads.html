@@ -1,5 +1,5 @@
 #{extends 'menu.html' /}
-#{set cssName:'help-news' /}
+#{set cssName:'help-news' /}<!--与showAllReports.html共用help-news.css-->
     <div id="help-news-box">
 		<h1 class="location">你现在的位置：<a href="@{Application.index()}">首页</a>><em><a href="@{Uploads.showAllUploads(0)}">求助资讯</a></em></h1>
 	    #{if allUploads.size() >= 1}
@@ -23,13 +23,13 @@
                     &{allUploads.content}
                 </div>
                 #{if session.get("authority") == "1"}
-                <div class="span3">
-                    <a href="@{Uploads.deleteUpload(allUploads.id)}">删除</a>
+                <span class="span3">
+                    <a class="red" href="@{Uploads.deleteUpload(allUploads.id)}">删除</a>
                     <a href="@{Uploads.setTop(allUploads.id)}">置顶</a>
                     #{if allUploads.priority != 0}
                     <a href="@{Uploads.cancelTop(allUploads.id)}">取消置顶</a>
                     #{/if}
-                </div>
+                </span>
                 #{/if}
             </div>
         #{/list}
