@@ -48,7 +48,8 @@
 	        </span>
 	    </div>
         <div class="postcomment">
-			<form action="@{Uploads.postComment(oneUpload.id)}" method="post" >
+        	<p id="errorMessage"></p>
+			<form action="@{Uploads.postComment(oneUpload.id)}" method="post" onsubmit="return checkComment(this)">
 			<h4>发表你的评论</h4>
 			<textarea name="content"></textarea>
 			<input type="submit" value="提交" name="sub" class="sub-button" />
@@ -80,7 +81,7 @@
         </div>
 	<script type="text/javascript" charset="utf-8" src="/public/kindeditor/kindeditor.js"></script>
     <script type="text/javascript" charset="utf-8" src="/public/kindeditor/lang/zh_CN.js"></script>
-    <script type="text/javascript" scr="/public/javascripts/upload.js"></script>
+    <script type="text/javascript" src="/public/javascripts/upload.js"></script>
     <script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=0" ></script>
         <script type="text/javascript" id="bdshell_js"></script>
         <script type="text/javascript">

@@ -63,6 +63,7 @@ public class Uploads extends Controller{
     	Upload upload = Upload.findById(id);
         String author;
         content = content.replaceAll("\n", "<br />");
+        content = content.replaceAll("<script[^>]*>[\\d\\D]*?</script>","");
         if(session.get("userId") == null) {
             author = "匿名";
         }

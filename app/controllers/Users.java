@@ -145,7 +145,10 @@ public class Users extends Controller {
 		for(int i = 0;i<uid.size();i++) {
 			String userId = uid.get(i).userid;
 			String existEmail = uid.get(i).email;
-			if(userId.equals(userid)) {
+			if(userId.equals(userid) && existEmail.equals(email)) {
+				registerPage("此学号和邮箱已注册", "", name, "", phone);
+			}
+			else if(userId.equals(userid)) {
 				registerPage("此学号已注册", "", name, email, phone);
 			}
 			else if(existEmail.equals(email)) {

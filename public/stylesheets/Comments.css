@@ -207,6 +207,11 @@ textarea{
 .author span{
 	color: rgb(0, 125, 82);
 }
+#errorMessage{
+	color: red;
+	height: 15px;
+	margin:5px 0px 15px 0px;
+}
 .footer{
 	height: 50px;
 	width: 980px;

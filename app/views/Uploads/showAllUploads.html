@@ -25,7 +25,9 @@
                 #{if session.get("authority") == "1"}
                 <span class="span3">
                     <a class="red" href="@{Uploads.deleteUpload(allUploads.id)}">删除</a>
+                    #{if allUploads.priority == 0}
                     <a href="@{Uploads.setTop(allUploads.id)}">置顶</a>
+                    #{/if}
                     #{if allUploads.priority != 0}
                     <a href="@{Uploads.cancelTop(allUploads.id)}">取消置顶</a>
                     #{/if}
