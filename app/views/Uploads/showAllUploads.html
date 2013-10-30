@@ -14,6 +14,9 @@
                     <a class="thumbnail imgcommon" hrefs="#"><img src="/public/images/${allUploads.fileName}" alt="childrplen" width="180" height="150" />
                     </a>
                     #{/if}
+                    #{else}
+                    <a class="thumbnail imgcommon" href="#"><img src="/public/images/usrLogo.jpg" alt="childrplen" width="180" height="150" /></a>
+                    #{/else}
                 </div>
                 <div class="span2">
                     <h2 class="body_left2_title"><a href="@{Uploads.showOneUpload(allUploads.id)}">&{allUploads.title}</a></h2>

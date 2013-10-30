@@ -34,13 +34,13 @@ public class Reports extends Controller {
 	public static void showAllReports(int startPosition) {
 		int totalReport=Report.findAll().size();
 		String hql = "select r from Report r order by id desc";
-		List<Report> allReports = Report.find(hql).from(startPosition*5).fetch(5);
+		List<Report> allReports = Report.find(hql).from(startPosition*10).fetch(10);
 		render(allReports,startPosition,totalReport);
 	}
 
 	public static void showNextReport(int startPosition) {
 		int totalReport = Report.findAll().size();
-		if(startPosition >= totalReport/5)
+		if(startPosition >= totalReport/10)
 			startPosition = startPosition;
 		else {
 			startPosition = startPosition + 1;
@@ -62,5 +62,15 @@ public class Reports extends Controller {
 	public static void showOneReport(Long id) {
 		Report oneReport = Report.find("byId",id).first();
 		render(oneReport);
+	}
+
+	public static void deleteReport(Long id) {
+		if(User.find("byUserid", session.get("userId")).<User>first().authority == 1) {
+            Report existReport = Report.find("byId",id).first();
+            existReport.delete();
+            showAllReports(0);
+        }
+        else {
+        }
 	}
 }

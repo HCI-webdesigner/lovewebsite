@@ -14,6 +14,11 @@
 	    			<h2><a href="@{Reports.showOneReport(allReport.id)}">${allReport.title}</h2></a>
 	    			${allReport.content}
 	    		</div>
+	    		#{if session.get("authority") == "1"}
+                <div class="span3">
+                    <a href="@{Reports.deleteReport(allReport.id)}">删除</a>
+                </div>
+                #{/if}
 	    	</div>
 	    #{/list}
 	    #{/if}
