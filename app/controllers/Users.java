@@ -89,7 +89,7 @@ public class Users extends Controller {
 
 	public static void captcha(String id) {
 	    Images.Captcha captcha = Images.captcha();
-	    String code = captcha.getText("#E4EAFD");
+	    String code = captcha.getText("#74b157");
 	    Cache.set(id, code, "10mn");
 	    renderBinary(captcha);
 	}
@@ -107,8 +107,7 @@ public class Users extends Controller {
 	        code, Cache.get(randomID)
 	    ).message("Invalid code. Please type it again");
 	    if(validation.hasErrors()) {
-	    	String result = "failed";
-	    	System.out.println("hhq");
+	    	String result = "验证失败";
 	        Users.getPassword(result);
 	    }
 	    char[] newPass = new char[6];

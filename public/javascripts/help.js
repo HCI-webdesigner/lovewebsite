@@ -8,6 +8,7 @@ function checkNonEmpty(inputField) {
 }
 
 function checkTitle(inputField) {
+	inputField.value = inputField.value.replace(/(^\s*)|(\s*$)/g, "");
 	if(checkNonEmpty(inputField)) {
 		return true;
 	}
@@ -18,7 +19,11 @@ function checkTitle(inputField) {
 }
 
 function checkContent(inputField) {
-	if(checkNonEmpty(inputField)) {
+	inputField.value = inputField.value.replace(/(^\s*)|(\s*$)/g, "");
+	if(inputField.value == "输入您的求助信息，如说明你的个人情况等。") {
+		return false;
+	}
+	else if(checkNonEmpty(inputField)) {
 		return true;
 	}
 	else {
@@ -40,7 +45,7 @@ function checkPhoto(inputField) {
 function check_form(form) {
 	if(checkTitle(form['title']) &&
 		checkContent(form['content']) &&
-		checkPhoto(form['photo'])) {
+		checkPhoto(form['file'])) {
 		return true;
 	}
 	else {

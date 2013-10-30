@@ -3,8 +3,8 @@
     <div id="help_content">
         <h1 class="location">你现在的位置：<a href="@{Application.index()}">首页</a>><em><a href="@{Uploads.index()}">我要求助</a></em></h1>
         <div class="helpinfomation">
-            <span id="errorMessage"></span>
-            <form action="/Uploads/uploadhelp" method="post" accept-charset="utf-8" enctype="multipart/form-data" onsubmit="return check_form(this)">
+            <p id="errorMessage"></p>
+            <form action="/Uploads/uploadhelp" method="post" accept-charset="utf-8" enctype="multipart/form-data" onsubmit="javascript:editor.sync();return check_form(this)">
                 <ul>
                     <li>
                         <label for="title">标题:</label>
@@ -13,7 +13,7 @@
                     <li>
                         <label for="content">求助资料:</label>
                         <br/>    
-                        <textarea id="content" name="content" style="width:500px;height:300px;" placeholder="d"></textarea>
+                        <textarea id="content" name="content" style="width:500px;height:300px;" placeholder="输入您的求助信息，如说明你的个人情况等。">输入您的求助信息，如说明你的个人情况等。</textarea>
                     </li>
                     <li>
                         <input type="file" id="file" name="file" />
@@ -31,10 +31,22 @@
     <script type="text/javascript" charset="utf-8" src="/public/kindeditor/kindeditor.js"></script>
     <script type="text/javascript" charset="utf-8" src="/public/kindeditor/lang/zh_CN.js"></script>
     <script>
-        KindEditor.options.filterMode = false;
+        var editor;
         KindEditor.ready(function(K) {
-            K.editor = K.create('#content');
+        editor = K.create('textarea[name="content"]', {
+        allowFileManager : true,
+        forecolor : 'gray',
+        afterFocus : function(e){
+        if (editor.html()=='输入您的求助信息，如说明你的个人情况等。')
+            editor.html('');
+        },
+        afterBlur : function(e){
+        if (editor.html()=='<p><br /></p>' || editor.html()=='' || editor.html().replace(/&nbsp;/gi, '') == '' || editor.isEmpty())
+            editor.html('输入您的求助信息，如说明你的个人情况等。');
+        }
         });
+        });
+        
     </script>
     <script type="text/javascript" charset="utf-8" src="/public/javascripts/help.js"></script>
 </body>
