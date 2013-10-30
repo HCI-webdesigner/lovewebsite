@@ -37,7 +37,7 @@
             %{
                 for(int i = 0; i < totalUpload/10; i++) {
             }%
-                <a href="@{Uploads.showAllUploads(i)}">第${i+1}页</a>
+                <a href="@{Uploads.showAllUploads(i)}" class="page-num">${i+1}</a>
             %{
                 }
             }%

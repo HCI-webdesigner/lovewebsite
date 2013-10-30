@@ -23,7 +23,7 @@
         	%{
         		for(int i = 0; i < totalReport/10; i++) {
         	}%
-        		<a href="@{Reports.showAllReports(i)}">第${i+1}页</a>
+        		<a href="@{Reports.showAllReports(i)}" class="page-num">${i+1}</a>
         	%{
         		}
         	}%

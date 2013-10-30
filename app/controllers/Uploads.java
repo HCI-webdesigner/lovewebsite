@@ -62,6 +62,7 @@ public class Uploads extends Controller{
     public static void postComment(Long id, @Required String content) {
     	Upload upload = Upload.findById(id);
         String author;
+        content = content.replaceAll("\n", "<br />");
         if(session.get("userId") == null) {
             author = "匿名";
         }

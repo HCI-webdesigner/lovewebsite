@@ -136,37 +136,30 @@ a{
 	clear: both;
 	margin: 20px 25px;
 	margin-bottom: 0px;
+	text-align: right;
 
 }
-.page-box a{
+.next-page-btn-a{
 	padding: 10px;
 	-wekit-border:6px;
 	-moz-border；6px;
 	border-radius: 8px 0px;
-	background-color: rgba(0,0,0,0.01);
-	*background-color:#ededed;
-	color: rgba(0,0,0,0.8);
-	*color: black;
+	background-color:#ededed;
+	color: rgb(57, 139, 18);
 	border:1px outset white;
 }
-.page-box a:hover{
+.page-num:hover,.next-page-btn-a:hover{
 	background-color: #74b157;
     color: white;
     border-radius: 6px;
     border:1px solid white;
     box-shadow: 3px 3px 4px #DCDCDC;
 }
-.current-page-li{
-	background: #cfcfcf;
-}
-.page-item:hover{
-	background: #cfcfcf;
-}
-.current-page-a{
-	float: left;
-	padding: 6px 0 0 0;
-	text-decoration: none;
-	color: #9A9A9A;
+.page-num{
+	border: 1px solid rgb(199, 199, 199);
+	padding: 5px;
+	margin: 0px 3px;
+	color: rgb(80,80,80);
 }
 .triangle{
 	display: inline-block;

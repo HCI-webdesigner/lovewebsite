@@ -1,8 +1,9 @@
 #{extends 'menu.html' /}
 #{set cssName:'feedback' /}
 	<div class="main">
-		#{form @FeedBacks.sendFeedBack(), enctype:'multipart/form-data'}
-			<p class="from-head line-center">用户反馈</p>
+		<form action="/FeedBacks/sendFeedBack" onsubmit="return check_form(this)" method="post" accept-charset="utf-8" enctype="multipart/form-data">
+			<p class="from-head">用户反馈</p>
+			<p id="errorMessage"></p>
 			<p class="text-line">
 				<label for="name">
 					姓名：
@@ -27,10 +28,11 @@
 			<p class="line-center">
 				<input type="submit" name="feedback" value="发送" class="sub-button">
 			</p>
-		#{/form}
+		</form>
 	</div>
 	<div class="footer">
             <p>Copyright ? 2013 All Rights Reserved</p>
     </div>
+    <script type="text/javascript" src="/public/javascripts/feedback.js"></script>
 </body>
 </html>
