@@ -18,7 +18,13 @@ body{
     font-weight: bold;
     color: rgba(0, 0, 0, 0.4);
 }
-.location em {
+.location a{
+	color: rgba(0,0,0,0.4);
+    *color: gray;
+	text-decoration: none;
+}
+.location em a{
+	text-decoration: none;
 	color: rgb(116, 177, 87);
 	font-weight: bolder;
 }

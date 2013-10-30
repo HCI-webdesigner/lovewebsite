@@ -2,22 +2,22 @@
 #{set cssName:'login' /}
 	 <div class="form-body">
         <form action="/Users/checkLogin" enctype="multipart/form-data" method="post" accept-charset="utf-8" onsubmit="return loginCheck(this)">
-                <span id="errorMessage">${message}</span>
                 <ul class="from-list">
-                    <h3 class="from-head">登录</h3>
-                    <li class="first-child">
-                        <label for="email">邮箱 </label>
-                        <input id="email" type="text" name="email" class="input-text" placeholder="你的注册邮箱" onblur="checkEmail(this)"/>
-                        <span id="email-tips" class="tips"></span>
+                    <li class="from-head">Sign In</li>
+                    <li id="errorMessage">${message}</li>
+                    <li>
+                        <div class="input-name text-bg">
+                            <input type="text" name="email" class="input-text" onblur="checkEmail(this)" />
+                        </div>
                     </li>
                     <li>
-                        <label for="password">密码 </label>
-                        <input id="password" type="password" name="password" class="input-text" onblur="checkPassword(this)"/>
-                        <span id="password-tips" class="tips"></span>
+                        <div class="input-password text-bg">
+                            <input type="password" name="password" class="input-text"/>
+                        </div>
                     </li>
                     <li class="forgot-password">
-					<a href="@{Users.getPassword()}">忘记密码?</a>
-					</li>
+                        <a href="@{Users.getPassword()}">忘记密码了吗?</a>
+                    </li>
                     <li>
                         <input type="submit" value="登录" class="input-submit"/>
                     </li>

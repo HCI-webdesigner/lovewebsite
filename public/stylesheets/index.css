@@ -32,8 +32,9 @@ img {
 	box-shadow: 8px 8px 7px #888;
 	background-color:#FCFCFC;
 	width:1100px;
-	height:1630px;
+	min-height:1640px;
 	margin:30px auto;
+	padding-top: 5px;
 }
 #header1{
 	height:135px;
@@ -81,7 +82,7 @@ img {
 }
 .new-box{
 	width: 970px;
-	height: 270px;
+	height: 280px;
 	border: 2px solid #ddd;
 	margin: 0 auto;
 	margin-top:40px;
@@ -120,6 +121,11 @@ img {
 	-webkit-border-radius: 9px;
 	color: white;
 	margin-bottom: 20px;
+	padding: 3px;
+	line-height: 1.6;
+}
+.new-info li span{
+
 }
 .new-time{
     background-color: #B94A48;   
@@ -135,6 +141,7 @@ img {
 	width: 800px;
 	margin-left: 50px;
 	color: rgb(50, 50, 50);
+	line-height: 1.9;
 }
 .box{
 	/*height: 750px;*/

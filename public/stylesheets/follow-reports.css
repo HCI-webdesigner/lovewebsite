@@ -96,10 +96,20 @@ h2{color: #DC0000;font-size: 20px;padding-bottom: 10px;}
 	background-color: #5c9b3d;
 }
 .location {
-	padding: 30px 0 35px 30px;
-	font-size: 16px;
-   font-weight: normal;
-   color: #999999;
+    padding: 30px 0px 15px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.4);
+}
+.location a{
+    color: rgba(0,0,0,0.4);
+    *color: gray;
+    text-decoration: none;
+}
+.location em a{
+    text-decoration: none;
+    color: rgb(116, 177, 87);
+    font-weight: bolder;
 }
 
 #lovers_body{
