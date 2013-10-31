@@ -258,7 +258,7 @@ K.options = {
 		'justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent',
 		'clearhtml', '|', 'fullscreen', '/',
 		'formatblock', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold',
-		'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'image', 'multiimage',
+		'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', 
 		'hr', 'emoticons', 'pagebreak',
 		'anchor', 'link', 'unlink'
 	],

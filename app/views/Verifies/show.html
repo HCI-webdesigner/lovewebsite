@@ -1,7 +1,6 @@
 #{extends 'adminMenu.html' /}
 #{set cssName:'upload' /}
     
-    
     <div class="content">
         <h3>审核用户上传的信息</h3>
         <div class="line">
@@ -9,15 +8,14 @@
         <div class="upMsg2">
             <span class="title1">上传者ID:</span>&nbsp;&nbsp;${verify.author}<br>
             <span class="title1">标题:</span>&nbsp;&nbsp;${verify.title}<br>
-            <!-- <span class="photo"></span> -->
             #{if verify.fileName.matches("^.+\\.doc")}
                 <a href="/public/images/${verify.fileName}">${verify.fileName}</a><br>
             #{/if}
             #{else}
-            <img src="/public/images/${verify.fileName}" width="50" height="200" align="center"/><br>
+            <img src="/public/images/${verify.fileName}" align="center"/><br>
             #{/else}
-            <span class="title1">内容:<br></span>
-            &{verify.content}<br>
+            <span class="title1">内容:</span><br>
+                &{verify.content}<br/>
             <span class="uploadTime">上传时间:</span>${verify.postedAt.asdate('y-M-dd HH:mm:ss', 'chs')}<br>
             <a href="@{Verifies.editPage(verify.id)}">编辑</a>
             <div class="line">

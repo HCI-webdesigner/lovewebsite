@@ -11,9 +11,9 @@
                         <input type="text" class="helpform_input" id="title" onblur="checkTitle(this);" name="title" placeholder="输入标题"/>
                     </li>
                     <li>
-                        <label for="content">求助资料:</label>
+                        <span>求助资料:(输入您的求助信息，如说明你的个人情况等。)</span>
                         <br/>    
-                        <textarea id="content" name="content" style="width:500px;height:300px;" placeholder="输入您的求助信息，如说明你的个人情况等。">输入您的求助信息，如说明你的个人情况等。</textarea>
+                        <textarea id="content" name="content" style="width:500px;height:300px;" ></textarea>
                     </li>
                     <li>
                         <input type="file" id="file" name="file" />
@@ -33,21 +33,15 @@
     <script>
         var editor;
         KindEditor.ready(function(K) {
-        editor = K.create('textarea[name="content"]', {
-        allowFileManager : true,
-        forecolor : 'gray',
-        afterFocus : function(e){
-            if(editor.html()=='输入您的求助信息，如说明你的个人情况等。')
-                editor.html('');
-            },
-        afterBlur : function(e){
-            if(editor.html()=='<br />' || editor.html()=='' || editor.count('content') == 0)
-                editor.html('输入您的求助信息，如说明你的个人情况等。');
-            console.log(editor.count(editor.html('content')));
-            }
+            editor = K.create('textarea[name="content"]', {
+            // allowFileManager : true,
+            // forecolor : 'gray',
+            afterFocus : function(e){
+                if(editor.isEmpty())
+                    editor.html('');
+                }
+            });
         });
-        });
-        
     </script>
     <script type="text/javascript" charset="utf-8" src="/public/javascripts/help.js"></script>
 </body>
