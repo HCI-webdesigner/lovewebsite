@@ -3,5 +3,5 @@ window.onload = function() {
 	var inter=setInterval(function() {
 		var fromFirstChild = newDom.removeChild(newDom.firstChild);
 		newDom.appendChild(fromFirstChild);
-	}, 1000);
+	}, 1500);
 }

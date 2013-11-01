@@ -21,42 +21,17 @@
     </div>
     <div class="new-box">
         <h1 class="com-title">
-            新增求助
+            最新求助信息
              <span class="directions">
                     <a href="@{Uploads.showAllUploads()}">每个人都需要帮助</a>
             </span>
         </h1>
         <ul class="new-info" id="new-info">
+            #{list items:latestUploads, as:'latestUploads'}
             <li>
-                1沉默的孤儿 8岁先
+                <a href="@{Uploads.showOneUpload(latestUploads.id)}">${latestUploads.content}</a> 
             </li>
-            <li>
-                21沉默的孤儿 8岁先天性漏斗胸
-            </li>
-            <li>
-               3${latestNews.content}
-            </li>
-             <li>
-                4${latestNews.content}
-            </li>
-            <li>
-                5${latestNews.content}
-            </li>
-            <li>
-                6${latestNews.content}
-            </li>
-            <li>
-                7${latestNews.content}1沉默的孤儿 8岁先天性漏斗胸女孩等待救助
-            </li>
-            <li>
-                8${latestNews.content}
-            </li>
-             <li>
-                9${latestNews.content}
-            </li>
-             <li>
-                10${latestNews.content}
-            </li>
+            #{/list}
         </ul>
         <div class="aim">
             <h3>&#10029;我们的宗旨</h3>
