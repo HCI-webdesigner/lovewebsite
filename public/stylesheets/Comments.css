@@ -192,17 +192,13 @@ textarea{
 .content p{
 	word-break:break-all;
 	font-size: 15px;
+	width: 870px;
 }
 .row{
 	width: 920px;
 	margin:20px 15px;
 	padding-bottom: 20px;
 	border-bottom: 2px dotted #DCDCDC; 
-}
-.row p{
-	margin-top: 10px;
-	color: rgb(50,50,50);
-	text-indent: 0.6cm;	
 }
 .author span{
 	color: rgb(0, 125, 82);

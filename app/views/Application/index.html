@@ -5,12 +5,12 @@
         <span class="logo">
             <img src="/public/images/logo5.png" alt="logo2" />
         </span>
-         #{if session.get("userId") != null}
-            <a href="@{Uploads.index()}" class="needing-help">我要求助</a>
-            #{/if} 
+        #{if session.get("userId") != null}
+        <a href="@{Uploads.index()}" class="needing-help">我要求助</a>
+        #{/if} 
             #{else}
-            <a href="@{Users.login()}" class="needing-help">我要求助</a>
-            #{/else}
+        <a href="@{Users.login()}" class="needing-help">我要求助</a>
+        #{/else}
     </div>
     <div class="undermenu">
         <img src="/public/images/scau/4.jpg" />
@@ -21,23 +21,47 @@
     </div>
     <div class="new-box">
         <h1 class="com-title">
-            求助信息
-            <span class="directions">&nbsp</span>
+            新增求助
+             <span class="directions">
+                    <a href="@{Uploads.showAllUploads()}">每个人都需要帮助</a>
+            </span>
         </h1>
-        <ul class="new-info">
+        <ul class="new-info" id="new-info">
             <li>
-                <span class="new-item new-time">时间</span>
-                <span class="new">${latestNews.time}</span>
+                1沉默的孤儿 8岁先
             </li>
             <li>
-                <span class="new-item new-address">地点</span>
-                <span class="new">${latestNews.address}</span>
+                21沉默的孤儿 8岁先天性漏斗胸
             </li>
             <li>
-                <span class="new-item new-content">内容</span>
-                <span class="new">${latestNews.content}</span>
+               3${latestNews.content}
+            </li>
+             <li>
+                4${latestNews.content}
+            </li>
+            <li>
+                5${latestNews.content}
+            </li>
+            <li>
+                6${latestNews.content}
+            </li>
+            <li>
+                7${latestNews.content}1沉默的孤儿 8岁先天性漏斗胸女孩等待救助
+            </li>
+            <li>
+                8${latestNews.content}
+            </li>
+             <li>
+                9${latestNews.content}
+            </li>
+             <li>
+                10${latestNews.content}
             </li>
         </ul>
+        <div class="aim">
+            <h3>&#10029;我们的宗旨</h3>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用真诚帮助需要帮助的华农人，网站只提供一个平台让更多消息能够迅速传遍华农，从而让需要帮助的华农人及时得到帮助！</p>
+        </div>
     </div>
     <div class="box">
         <div class="body_left">
@@ -83,7 +107,7 @@
             </h1>
             <div class="body_left4_content">
                 <p class="body_left4_content1">
-                    <a href="@{Reports.showAllReports()}">${report.content}</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="@{Reports.showAllReports()}">${report.content}</a>
                 </p>
             </div>
             <div class="body_left4_img">
@@ -125,7 +149,6 @@
     </div>
 </div>
 
-<script type="text/javascript" src="/public/javascripts/gallery.js"></script>
 <script type="text/javascript" src="/public/javascripts/index.js"></script>
 </body>
 </html>
