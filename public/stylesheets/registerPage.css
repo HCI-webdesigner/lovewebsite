@@ -110,6 +110,7 @@ table{
 	color: red;
 	padding: 10px; 
 	line-height: 36px;
+	font-size: 13px;
 }
 #submit-form{
 	display: block;
@@ -117,7 +118,7 @@ table{
 #errorMessage{
 	color: red;
 	padding-bottom: 10px;
-	font-size: 20px;
+	font-size: 13px;
 }
 .footer{
 	height: 50px;
