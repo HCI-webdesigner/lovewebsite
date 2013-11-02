@@ -8,7 +8,7 @@
 				<label for="name">
 					姓名：
 				</label>
-				<input type="text" name="name" class="input-txt">
+				<input type="text" name="name" class="input-txt" onblur="checkName(this);">
 			</p>
 
 			<p class="text-line">
@@ -16,7 +16,7 @@
 					内容：
 				</label>
 				<br />
-				<textarea name="content" class="input-txt txtarea"></textarea>
+				<textarea name="content" class="input-txt txtarea" onblur="checkContent(this);"></textarea>
 			</p>
 
 			<p class="text-line">

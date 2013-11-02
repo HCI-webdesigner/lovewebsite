@@ -30,11 +30,8 @@ public class Users extends Controller {
 		render(existUser);
 	}
 
-	public static void login(String message) {
-		if(message == null) {
-			message = "";
-		}
-		render(message);
+	public static void login() {
+		render();
 	}
 
 	public static void editPasswordIndex() {
@@ -83,7 +80,8 @@ public class Users extends Controller {
 			}
 		}
 		else {
-			login("帐号或密码错误");
+			flash.error("帐号或密码错误");
+			login();
 		}
 	}
 
@@ -94,12 +92,9 @@ public class Users extends Controller {
 	    renderBinary(captcha);
 	}
 
-	public static void getPassword(String result) {
-		if(result == null) {
-			result = "";
-	    }
+	public static void getPassword() {
 	    String randomID = Codec.UUID();
-	    render(randomID, result);
+	    render(randomID);
 	}
 
 	public static void findPassword(String email, String code, String randomID) {
@@ -107,8 +102,8 @@ public class Users extends Controller {
 	        code, Cache.get(randomID)
 	    ).message("Invalid code. Please type it again");
 	    if(validation.hasErrors()) {
-	    	String result = "验证失败";
-	        Users.getPassword(result);
+	    	flash.error("验证失败");
+	        Users.getPassword();
 	    }
 	    char[] newPass = new char[6];
 	    for(int i = 0; i < 6; i++) {
@@ -135,8 +130,8 @@ public class Users extends Controller {
 		Application.index();
 	}
 
-	public static void registerPage(String message, String userid, String name, String email, String phone) {
-		render(message, userid, name, email, phone);
+	public static void registerPage() {
+		render();
 	}
 
 	public static void register(String userid, String name, String password, String pass,
@@ -146,13 +141,28 @@ public class Users extends Controller {
 			String userId = uid.get(i).userid;
 			String existEmail = uid.get(i).email;
 			if(userId.equals(userid) && existEmail.equals(email)) {
-				registerPage("此学号和邮箱已注册", "", name, "", phone);
+				flash.put("message", "此学号和邮箱已注册");
+				flash.put("userid", "");
+				flash.put("name", name);
+				flash.put("phone", phone);
+				flash.put("email", "");
+				registerPage();
 			}
 			else if(userId.equals(userid)) {
-				registerPage("此学号已注册", "", name, email, phone);
+				flash.put("message", "此学号已注册");
+				flash.put("userid", "");
+				flash.put("name", name);
+				flash.put("phone", phone);
+				flash.put("email", email);
+				registerPage();
 			}
 			else if(existEmail.equals(email)) {
-				registerPage("此邮箱已注册", userid, name, "", phone);
+				flash.put("message", "此邮箱已注册");
+				flash.put("userid", userid);
+				flash.put("name", "");
+				flash.put("phone", phone);
+				flash.put("email", "");
+				registerPage();
 			}
 		}
 		

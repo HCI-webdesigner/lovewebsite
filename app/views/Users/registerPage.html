@@ -46,14 +46,14 @@
 			<tr>
 				<td>学号:</td>
 				<td>
-					<input type="text" class="inputText" name="userid" id="userid" onblur="checkUserId(this)" value="${userid}"/>
+					<input type="text" class="inputText" name="userid" id="userid" onblur="checkUserId(this)" value="${flash.userid}"/>
 					<span id="userid-tips" class="tips"></span>
 				</td>
 			</tr>
 			<tr>
 				<td>姓名:</td>
 				<td>
-					<input type="text" class="inputText" name="name" id="name" onblur="checkName(this)" value="${name}">
+					<input type="text" class="inputText" name="name" id="name" onblur="checkName(this)" value="${flash.name}">
 					<span id="name-tips" class="tips"></span>
 				</td>
 			</tr>
@@ -77,14 +77,14 @@
 			<tr>
 				<td>电子邮箱:</td>
 				<td>
-					<input type="text" class="inputText" name="email" id="email" onblur="checkEmail(this)" value="${email}"/>
+					<input type="text" class="inputText" name="email" id="email" onblur="checkEmail(this)" value="${flash.email}"/>
 					<span id="email-tips" class="tips"></span>
 				</td>
 			</tr>
 			<tr>
 				<td>手机号码:</td>
 				<td>
-					<input type="text" class="inputText" name="phone" id="phone" onblur="checkPhone(this)" value="${phone}">
+					<input type="text" class="inputText" name="phone" id="phone" onblur="checkPhone(this)" value="${flash.phone}">
 					<span id="phone-tips" class="tips"></span>
 				</td>
 			</tr>
@@ -104,7 +104,7 @@
 			</tr>
 			<tr>
 				<td colspan="2">
-					<div id="errorMessage">${message}</div>
+					<div id="errorMessage">${flash.message}</div>
 					<input type="submit" value="注   册" class="button"/>	
 					<input type="Reset" value="重   置" class="button">
 				</td>
