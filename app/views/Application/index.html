@@ -26,13 +26,15 @@
                     <a href="@{Uploads.showAllUploads()}">每个人都需要帮助</a>
             </span>
         </h1>
-        <ul class="new-info" id="new-info">
-            #{list items:latestUploads, as:'latestUploads'}
-            <li>
-                <a href="@{Uploads.showOneUpload(latestUploads.id)}">${latestUploads.content}</a> 
-            </li>
-            #{/list}
-        </ul>
+        <div class="new-info" id="new-info">
+            <ul class="new-list" id="new-list">
+                #{list items:latestUploads, as:'latestUploads'}
+                <li>
+                    <a href="@{Uploads.showOneUpload(latestUploads.id)}">${latestUploads.content}</a> 
+                </li>
+                #{/list}
+            </ul>
+        </div>
         <div class="aim">
             <h3>&#10029;我们的宗旨</h3>
             <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用真诚帮助需要帮助的华农人，网站只提供一个平台让更多消息能够迅速传遍华农，从而让需要帮助的华农人及时得到帮助！</p>
