@@ -29,7 +29,7 @@
         <ul class="new-info" id="new-info">
             #{list items:latestUploads, as:'latestUploads'}
             <li>
-                <a href="@{Uploads.showOneUpload(latestUploads.id)}">${latestUploads.title}</a> 
+                <a href="@{Uploads.showOneUpload(latestUploads.id)}">${latestUploads.content}</a> 
             </li>
             #{/list}
         </ul>

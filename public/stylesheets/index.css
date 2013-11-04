@@ -113,7 +113,7 @@ img {
 	font-size: 16px;
 	overflow: hidden;
 }
-.new-info li{
+.new-list li{
 	width: 450px;
 	height: 29px;
 	margin-left: 50px;
@@ -257,6 +257,6 @@ img {
 	bottom: 20px;
 	text-align: center;
 }
-.body_left4_content1 a:hover,.body_left2_title a:hover,.directions a:hover,.more a:hover{
+.body_left4_content1 a:hover,.body_left2_title a:hover,.directions a:hover,.more a:hover,.new-info li a:hover{
 	color:rgb(255, 0, 0);
 }
