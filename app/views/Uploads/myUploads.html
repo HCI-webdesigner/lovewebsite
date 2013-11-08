@@ -3,23 +3,34 @@
     <div id="help-news-box">
         <h1 class="location">你现在的位置：<a href="@{Application.index()}">首页</a>><em><a href="@{Uploads.myUploads()}">我的求助</a></em></h1>
         #{if myuploads.size() >= 1}
-        #{list items:myuploads, as:'myuploads'}
+        #{list items:myuploads, as:'myupload'}
         <div class="row">
             <div class="span1">
-                <a class="thumbnail imgcommon" href="#"><img src="/public/images/${myuploads.photoUrl}" alt="childrplen" width="180" height="150" />
+                #{if myupload.fileName.matches("^.+\\.img")||
+                    myupload.fileName.matches("^.+\\.png")||
+                    myupload.fileName.matches("^.+\\.gif") ||
+                    myupload.fileName.matches("^.+\\.jpg") ||
+                    myupload.fileName.matches("^.+\\.jpeg")}
+                <a class="thumbnail imgcommon" href="#"><img src="/public/images/${myupload.fileName}" alt="childrplen" width="180" height="150" />
                 </a>
+                #{/if}
+                #{else}
+                <a class="thumbnail imgcommon" href="#"><img src="/public/images/usrLogo.jpg" alt="childrplen" width="180" height="150" /></a>
+                #{/else}
             </div>
             <div class="span2">
-                <h2 class="body_left2_title"><a href="@{Uploads.showOneUpload(myuploads.id)}">${myuploads.title}</a></h2>
-                <p>${myuploads.content.raw()}</p>
+                <h2 class="body_left2_title"><a href="@{Uploads.showOneUpload(myuploads.id)}">${myupload.title}</a></h2>
+                <p>${myupload.content.raw()}</p>
             </div>
         </div>
         #{/list}
         #{/if}
+        #{if myuploads.size() > 10}
         <div class="page-box">
             <a class="next-page-btn-a" href="@{Uploads.myPrevious(startPosition)}">上一页</a>
             <a class="next-page-btn-a" href="@{Uploads.myNext(startPosition)}">下一页</a>
         </div>
+        #{/if}
         <div class="footer">
             <p>Copyright ? 2013 All Rights Reserved</p>
         </div>

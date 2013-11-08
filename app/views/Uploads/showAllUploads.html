@@ -3,15 +3,15 @@
     <div id="help-news-box">
 		<h1 class="location">你现在的位置：<a href="@{Application.index()}">首页</a>><em><a href="@{Uploads.showAllUploads(0)}">求助资讯</a></em></h1>
 	    #{if allUploads.size() >= 1}
-        #{list items:allUploads, as:'allUploads'}
+        #{list items:allUploads, as:'allUploadVal'}
             <div class="row">
     	    	<div class="span1">
-                    #{if allUploads.fileName.matches("^.+\\.img")||
-                    allUploads.fileName.matches("^.+\\.png")||
-                    allUploads.fileName.matches("^.+\\.gif") ||
-                    allUploads.fileName.matches("^.+\\.jpg") ||
-                    allUploads.fileName.matches("^.+\\.jpeg")}
-                    <a class="thumbnail imgcommon" hrefs="#"><img src="/public/images/${allUploads.fileName}" alt="childrplen" width="180" height="150" />
+                    #{if allUploadVal.fileName.matches("^.+\\.img")||
+                    allUploadVal.fileName.matches("^.+\\.png")||
+                    allUploadVal.fileName.matches("^.+\\.gif") ||
+                    allUploadVal.fileName.matches("^.+\\.jpg") ||
+                    allUploadVal.fileName.matches("^.+\\.jpeg")}
+                    <a class="thumbnail imgcommon" hrefs="#"><img src="/public/images/${allUploadVal.fileName}" alt="childrplen" width="180" height="150" />
                     </a>
                     #{/if}
                     #{else}
@@ -19,24 +19,28 @@
                     #{/else}
                 </div>
                 <div class="span2">
-                    <h2 class="body_left2_title"><a href="@{Uploads.showOneUpload(allUploads.id)}">&{allUploads.title}</a></h2>
-                    &{allUploads.content}
+                    <h2 class="body_left2_title"><a href="@{Uploads.showOneUpload(allUploadVal.id)}">&{allUploadVal.title}</a></h2>
+                    &{allUploadVal.content}
                 </div>
                 #{if session.get("authority") == "1"}
                 <span class="span3">
-                    <a class="red" href="@{Uploads.deleteUpload(allUploads.id)}">删除</a>
-                    #{if allUploads.priority == 0}
-                    <a href="@{Uploads.setTop(allUploads.id)}">置顶</a>
+                    <a class="red" href="@{Uploads.deleteUpload(allUploadVal.id)}">删除</a>
+                    #{if allUploadVal.priority == 0}
+                    <a href="@{Uploads.setTop(allUploadVal.id)}">置顶</a>
                     #{/if}
-                    #{if allUploads.priority != 0}
-                    <a href="@{Uploads.cancelTop(allUploads.id)}">取消置顶</a>
+                    #{if allUploadVal.priority != 0}
+                    <a href="@{Uploads.cancelTop(allUploadVal.id)}">取消置顶</a>
                     #{/if}
                 </span>
                 #{/if}
             </div>
         #{/list}
         #{/if}
-            <div class="page-box">
+        #{else}
+            <div><p>暂时还没有求助信息</p></div>
+        #{/else}
+        #{if allUploads.size() > 10}
+        <div class="page-box">
             <a class="next-page-btn-a" href="@{Uploads.previousPage(startPosition)}">上一页</a>
 
             %{
@@ -49,6 +53,7 @@
 
             <a class="next-page-btn-a" href="@{Uploads.nextPage(startPosition)}">下一页</a>
         </div>
+        #{/if}
         <div class="footer">
             <p>Copyright ? 2013 All Rights Reserved</p>
         </div>

@@ -67,9 +67,9 @@
                     </div>
                 </div>
                 #{/list}
-                    #{/if}
-                    #{else}
-                <div>There is currently nothing to read here.</div>
+                #{/if}
+                #{else}
+                <div><p>暂时还没有求助信息</p></div>
                 #{/else}
             </div>
         </div>
@@ -80,6 +80,7 @@
                     <a href="@{Reports.showAllReports()}">因为你，他们多了一份希望</a>
                 </span>
             </h1>
+            #{if report != null}
             <div class="body_left4_content">
                 <p class="body_left4_content1">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="@{Reports.showAllReports()}">${report.content}</a>
@@ -88,6 +89,7 @@
             <div class="body_left4_img">
                 <img id="img" src="/public/images/${report.photoUrl}" alt="children" />
             </div>
+            #{/if}
             <div class="more">
                 <a href="@{Reports.showAllReports()}">+更多</a>
             </div>
